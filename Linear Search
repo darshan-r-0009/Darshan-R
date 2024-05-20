@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<time.h>
+int main()
+{
+    int a[100],i,n,search;
+    double t_spent=0.0;
+    printf("\nLINEAR SEARCH\n");
+    printf("Enter number of elements be inserted into an array:\n");
+    scanf("%d",&n);
+    printf("Enter %d numbers into array:\n",n);
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+        printf("Enter the number to be searched: \n");
+        scanf("%d",&search);
+        clock_t begin=clock();
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==search)
+        {
+            printf("%d is present at location %d\n",search,i+1);
+            break;
+        }
+    }
+    if(i==n)
+    printf("%d is not present in array\n",search);
+     clock_t end = clock();
+    t_spent=(double)(end-begin)/CLOCKS_PER_SEC;
+    printf("Time Taken for Execution is: %f seconds\n",t_spent);
+    return 0;
+}
